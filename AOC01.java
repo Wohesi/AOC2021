@@ -1,4 +1,4 @@
-import java.io.File;  // import file class
+import java.io.File;  
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner; 
@@ -18,19 +18,19 @@ public class AOC01 {
         System.out.println(increaseCounter);
     }
 
-    // for a window of 3 numbers, fund the sum and check if it's increasing
+    // part 2: for a window of 3 numbers, find the sum and check if it's increasing
     static void part2(ArrayList<Integer> list) {
         Integer increaseCounter = 0;
         Integer window1 = list.get(0) + list.get(1) + list.get(3);
 
         for (int i = 1; i < list.size() -3; i++) {
                 Integer window2 = list.get(i) + list.get(i+1) + list.get(i+2);
-                //System.out.println(window2);
-                // System.out.println(sum);
+
                 if (window1 < window2) {
                     increaseCounter ++;
                 }
                 
+                // swap windows for next iteration
                 window1 = window2;
         }
 
